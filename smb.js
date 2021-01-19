@@ -26,7 +26,7 @@ function load_globals(config) {
 				var cell1 = row.getElementsByTagName("td")[0];
 				cell1.classList.add("clickableCell");
 				var cell2 = row.getElementsByTagName("td")[1];
-				cell2..classList.add("clickableCell");
+				cell2.classList.add("clickableCell");
 				try {
 					var id = cell1.innerHTML;
 					var prop = cell2.innerHTML;
