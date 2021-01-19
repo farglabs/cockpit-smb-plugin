@@ -24,13 +24,16 @@ function load_globals(config) {
 		var createClickHandler = function(row) {
 			return function() {
 				var cell1 = row.getElementsByTagName("td")[0];
-				
+				cell1.classList.add("clickableCell");
 				var cell2 = row.getElementsByTagName("td")[1];
+				cell2..classList.add("clickableCell");
 				try {
 					var id = cell1.innerHTML;
 					var prop = cell2.innerHTML;
 					edit_property_share(id, prop);
 				}catch(err) {
+					console.error("Error polulating table data from config:");
+					console.error(err);
 				}
 			};
 		};
