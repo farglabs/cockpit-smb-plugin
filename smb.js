@@ -21,12 +21,11 @@ function load_globals(config) {
 	var rows = table.getElementsByTagName("tr");
 	for (i = 0; i < rows.length; i++) {
 		var currentRow = table.rows[i];
+		currentRow.classList.add("clickableRow");
 		var createClickHandler = function(row) {
 			return function() {
 				var cell1 = row.getElementsByTagName("td")[0];
-				cell1.classList.add("clickableCell");
 				var cell2 = row.getElementsByTagName("td")[1];
-				cell2.classList.add("clickableCell");
 				try {
 					var id = cell1.innerHTML;
 					var prop = cell2.innerHTML;
@@ -184,7 +183,7 @@ function load_shares(config) {
 	
 	for (var key in config) {
 		if(key != 'global') {
-			contents = contents + "<tr><td>" + key + "</td>";
+			contents = contents + "<tr class='clickableRow'><td>" + key + "</td>";
 			for (var i =0; i < 9; i++) {
 				if (config[key].hasOwnProperty(properties[i])) {
 					contents = contents + "<td>" + config[key][properties[i]]+"</td>";
@@ -202,6 +201,7 @@ function load_shares(config) {
 	var rows = table.getElementsByTagName("tr");
 	for (i = 0; i < rows.length; i++) {
 		var currentRow = table.rows[i];
+		currentRow.classList.add("clickableRow");
 		var createClickHandler = function(row) {
 			return function() {
 				var cell = row.getElementsByTagName("td")[0];
